@@ -57,7 +57,7 @@ section {
   /* Add a dark overlay for better text readability */
   /* This uses a simple linear-gradient overlay */
   background-blend-mode: darken;
-  background-color: rgba(46, 157, 247, 0.45); /* Blue overlay */
+  background-color: rgba(247, 123, 46, 0.45); /* Blue overlay */
 }
 
 /* Make the headline bold and modern */
@@ -76,6 +76,73 @@ section {
   text-shadow: 0 1px 4px rgba(0,0,0,0.12);
 }
 
+/* Style for the main heading section */
+.main-heading {
+  text-align: center;           /* Center the content */
+  margin-top: 0px;             /* Add space at the top */
+  margin-bottom: 40px;          /* Add space at the bottom */
+}
+
+/* Large bold white heading */
+.main-heading h1 {
+  color: #fff;                  /* White text */
+  font-size: 2.5em;             /* Large text size */
+  font-weight: bold;            /* Bold text */
+  letter-spacing: 2px;          /* Space between letters */
+  line-height: 1.3;             /* Space between lines */
+  margin-bottom: 24px;          /* Space below the heading */
+}
+
+/* Container for the banner image and text */
+.banner-container {
+  position: relative; /* Allows text to be placed on top of the image */
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Main banner image */
+.main-banner {
+  width: 100%;        /* Full width */
+  height: auto;       /* Keep aspect ratio */
+  display: block;
+}
+
+/* Text on top of the image */
+.banner-text {
+  position: absolute; /* Place text over the image */
+  top: 20%;           /* Move text down from the top */
+  left: 10%;          /* Move text right from the left */
+  color: #fff;        /* White text */
+  text-align: left;   /* Align text to the left */
+  margin-left: 750px; /* Increase space to the left of the banner text */
+}
+
+/* Large bold white heading */
+.banner-text h1 {
+  font-size: 2.5em;   /* Large text size */
+  font-weight: bold;  /* Bold text */
+  letter-spacing: 2px;/* Space between letters */
+  line-height: 1.3;   /* Space between lines */
+  margin-bottom: 24px;/* Space below the heading */
+  color: #fff;        /* White text */
+}
+
+/* Thin white line below the heading */
+.white-line {
+  border: none;
+  border-top: 2px solid #fff;
+  width: 60%;
+  margin: 0 0 18px 0;
+}
+
+/* Smaller serif subheadline in white */
+.subheadline {
+  color: #fff;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.2em;
+  margin: 0;
+}
+
 /* Story Section Styles */
 .story {
   background-color: #8BD1CB; /* Secondary Light Blue */
@@ -86,14 +153,14 @@ section {
 
 /* Add accent color to section headings */
 h2 {
-  color: #2E9DF7; /* Primary blue */
+  color: #000407; /* Primary blue */
   margin-top: 0;
   font-weight: bold;
 }
 
 /* Call-to-Action Section Styles */
 .call-to-action {
-  background-color: #FFC907; /* Primary Yellow */
+  background-color: #ffdd53; /* Primary Yellow */
   color: #222;
   text-align: center;
   padding: 30px 20px;
@@ -108,21 +175,24 @@ h2 {
   box-shadow: 0 2px 8px rgba(46, 157, 247, 0.10);
 }
 
-/* Donate Button Styles */
-.donate-button {
-  display: inline-block;
-  background-color: #4FCB53; /* Green */
-  color: #fff;
-  padding: 14px 32px;
-  text-decoration: none;
-  border-radius: 6px;
+.cta-button {
+  background-color: #ffdd53; /* yellow */
+  color: white;
   font-weight: bold;
-  font-size: 1.1em;
-  margin-top: 18px;
-  box-shadow: 0 2px 8px rgba(79, 203, 83, 0.10);
-  transition: background 0.3s, transform 0.2s;
+  font-size: 1.2rem;
+  padding: 12px 28px;
   border: none;
-  cursor: pointer;
+  border-radius: 999px; /* pill shape */
+  text-decoration: none;
+  display: inline-block;
+  margin: 20px 0;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #ffe345d1; /* brighter yellow on hover */
+  transform: scale(1.05);
 }
 
 /* Change button color when hovered */
@@ -131,52 +201,257 @@ h2 {
   transform: translateY(-2px) scale(1.04); /* Slight lift */
 }
 
+.donate-button {
+  background-color: #6dd1ff;  /* warm yellow */
+  color: black;
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.donate-btn:hover {
+  background-color: #7ed2fff0;
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+
 /* Add some spacing between sections */
 section {
   margin-bottom: 20px;
 }
 
+/* Top navigation bar styles */
+.top-nav {
+  display: flex;                  /* Arrange children in a row */
+  align-items: center;            /* Vertically center items */
+  justify-content: space-between; /* Space out left, center, right */
+  background: #fff;               /* White background */
+  padding: 12px 32px;             /* Padding around navbar */
+  position: relative;             /* For absolute centering of nav-center */
+}
+
+/* Logo on the far left */
+.nav-left {
+  flex: 1;                        /* Take up space on the left */
+  display: flex;
+  align-items: center;
+}
+
+.nav-logo {
+  height: 25px;                   /* Set logo height */
+}
+
+/* Navigation links in the center */
+.nav-center {
+  list-style: none;               /* Remove bullet points */
+  display: flex;                  /* Display links in a row */
+  gap: 24px;                      /* Space between links */
+  margin: 0;
+  padding: 0;
+  position: absolute;             /* Absolutely center the links */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav-center li a {
+  color: #000;                          /* Black text */
+  text-decoration: none;                /* No underline */
+  font-size: 1em;
+  font-family: 'Avenir', 'Proxima Nova', Arial, sans-serif; /* Friendly, clean font */
+  font-weight: normal;                  /* Not bold */
+  transition: color 0.2s;
+}
+
+.nav-center li a:hover,
+.nav-center li:hover > a {
+  color: #0074a6;                 /* Blue text on hover, like sign in */
+  background-color: #f4f8fb;      /* Light background on hover for highlight */
+  border-radius: 6px;             /* Rounded corners for friendly look */
+  transition: color 0.2s, background 0.2s;
+}
+
+/* Sign In link on the far right */
+.nav-right {
+  flex: 1;                        /* Take up space on the right */
+  display: flex;
+  justify-content: flex-end;      /* Align to the right */
+}
+
+.sign-in-link {
+  color: #000;                          /* Black text */
+  text-decoration: none;
+  font-size: 1em;
+  font-family: 'Avenir', 'Proxima Nova', Arial, sans-serif; /* Friendly, clean font */
+  font-weight: normal;                  /* Not bold */
+  transition: color 0.2s;
+}
+
+.sign-in-link:hover {
+  color: #0074a6;                 /* Blue on hover */
+}
+
+/* Make "Photo Gallery" and "Make a Difference" headings use the same friendly font as the navbar */
+.photo-gallery-heading,
+.make-difference-heading {
+  font-family: 'Avenir', 'Proxima Nova', Arial, sans-serif; /* Friendly, clean font */
+  font-weight: normal; /* Not bold, for a clean look */
+}
+
 /* 
   Media Queries for Responsive Design
-  Media queries help make your website look good on different screen sizes,
-  like phones (small screens) and computers (large screens).
+  These styles help the landing page look good on both desktop and mobile devices.
+  On small screens, sections stack vertically, text and images scale down,
+  and padding/margins are adjusted for easier reading.
 */
-
-/* This media query applies styles when the screen is 600px wide or less (like on most phones) */
 @media (max-width: 600px) {
-  /* Make hero section padding smaller on small screens */
-  .hero {
-    padding: 32px 8px;
-    font-size: 1em;
+  /* Stack sections vertically and reduce spacing */
+  section {
+    margin: 12px 4px;
+    padding: 14px 6px;
+    border-radius: 8px;
   }
 
-  /* Make headline font size smaller so it fits on small screens */
+  /* Make hero section take full width and stack text */
+  .hero {
+    padding: 24px 4px;
+    border-radius: 0 0 10px 10px;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+  }
+
+  /* Stack hero text over the image and center it */
+  .hero h1,
+  .hero p {
+    position: static;
+    width: 100%;
+    text-align: center;
+    font-size: 1.2em;
+    margin: 0 auto 10px auto;
+  }
   .hero h1 {
     font-size: 1.4em;
+    margin-bottom: 10px;
   }
-
-  /* Make subheadline font size smaller */
   .hero p {
     font-size: 1em;
   }
 
-  /* Make story and call-to-action sections have less padding */
-  .story,
-  .call-to-action,
-  .donation-section {
-    padding: 14px 8px;
-  }
-
-  /* Make impact story image smaller and stack above the text */
-  .impact-content {
-    display: block; /* Stack items vertically */
+  /* Banner text: stack and center */
+  .banner-text {
+    position: static;
+    margin-left: 0;
     text-align: center;
+    padding: 10px 0;
+    color: #fff;
+  }
+  .banner-text h1 {
+    font-size: 1.3em;
+    margin-bottom: 10px;
   }
 
-  .impact-image {
-    width: 90%;    /* Make image take up most of the width */
-    max-width: 220px;
+  /* Headings: scale down for mobile */
+  .main-heading h1,
+  .photo-gallery-heading,
+  .make-difference-heading {
+    font-size: 1.3em;
+    margin-bottom: 12px;
   }
+
+  /* Gallery and carousel images: smaller and stacked */
+  .carousel-track img,
+  .gallery-image,
+  .impact-image {
+    width: 90vw;
+    max-width: 220px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+  }
+
+  /* Navigation: stack vertically and center */
+  .top-nav {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 10px 4px;
+  }
+  .nav-center {
+    flex-direction: column;
+    gap: 10px;
+    position: static;
+    left: 0;
+    transform: none;
+    align-items: center;
+    width: 100%;
+    margin-top: 8px;
+  }
+  .nav-left,
+  .nav-right {
+    justify-content: center;
+    width: 100%;
+  }
+
+  /* Carousel: adjust padding and image size */
+  .carousel {
+    padding: 24px 4px;
+  }
+  .carousel-track {
+    gap: 10px;
+  }
+
+  /* Make call-to-action and make-difference sections more compact */
+  .call-to-action,
+  .make-difference-section {
+    padding: 18px 6px;
+    margin: 14px 4px;
+  }
+  .make-difference-section p {
+    font-size: 1em;
+    margin-bottom: 18px;
+  }
+  .make-difference-section .cta-button {
+    font-size: 1em;
+    padding: 10px 20px;
+  }
+
+  /* Make the image gallery scroll horizontally on phones */
+  .gallery-row {
+    display: flex;              /* Arrange images in a row */
+    overflow-x: auto;           /* Enable horizontal scrolling */
+    gap: 10px;                  /* Space between images */
+    padding-bottom: 10px;       /* Space below images */
+    scroll-snap-type: x mandatory; /* Snap images into place when scrolling */
+  }
+
+  .gallery-image {
+    flex: 0 0 auto;             /* Prevent images from shrinking */
+    width: 80vw;                /* Make images wide on small screens */
+    max-width: 180px;
+    border-radius: 8px;
+    scroll-snap-align: start;   /* Snap each image to the start */
+    margin-bottom: 0;           /* Remove bottom margin for horizontal scroll */
+  }
+
+  /* If you want to stack 1–2 images per row instead, comment out the .gallery-row styles above
+     and use the following for a simple stacked layout: */
+  /*
+  .gallery-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+  }
+  .gallery-image {
+    width: 90vw;
+    max-width: 220px;
+    margin-bottom: 8px;
+  }
+  */
 }
 
 /* This media query applies styles when the screen is wider than 600px (like on tablets and computers) */
@@ -195,4 +470,39 @@ section {
   .impact-image {
     width: 300px;
   }
+
+  .carousel {
+  position: relative;
+  padding: 60px 40px;
+  text-align: center;
+}
+
+.carousel-wrapper {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+.carousel-track img {
+  flex: 0 0 auto;
+  width: 300px;
+  border-radius: 12px;
+}
+
+.arrow {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+
 }
